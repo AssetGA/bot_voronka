@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-
 require("dotenv").config();
 const {
   Bot,
@@ -11,6 +10,12 @@ const {
 } = require("grammy");
 const { hydrate } = require("@grammyjs/hydrate");
 const { checkIfUserIsInGroup, checkSubscriptions } = require("./checkService");
+
+app.get("/", (req, res) => {
+  res.send("Express on Vercel");
+});
+
+const PORT = process.env.PORT || 5000;
 
 const bot = new Bot(process.env.BOT_API_KEY);
 
@@ -142,3 +147,9 @@ const webhookUrl = "https://grammy-omega.vercel.app/api/telegram-bot";
 bot.setWebHook(webhookUrl);
 
 bot.start();
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+module.exports = app;
