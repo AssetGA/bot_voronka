@@ -142,9 +142,9 @@ bot.catch((err) => {
   }
 });
 
-const webhookUrl = "https://grammy-omega.vercel.app/api/telegram-bot";
+// const webhookUrl = "https://grammy-omega.vercel.app/api/telegram-bot";
 
-bot.setWebHook(webhookUrl);
+// bot.setWebHook(webhookUrl);
 
 bot.start();
 
