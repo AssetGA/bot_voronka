@@ -1,0 +1,22 @@
+{
+  "name": "grammy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grammyjs/hydrate": "github:grammyjs/hydrate",
+    "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
+    "grammy": "^1.23.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
