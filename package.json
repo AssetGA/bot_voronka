@@ -14,7 +14,9 @@
     "@grammyjs/hydrate": "github:grammyjs/hydrate",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
-    "grammy": "^1.23.0"
+    "express": "^4.19.2",
+    "grammy": "^1.23.0",
+    "http": "^0.0.1-security"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"

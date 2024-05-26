@@ -1,3 +1,6 @@
+const express = require("express");
+const app = express();
+
 require("dotenv").config();
 const {
   Bot,
@@ -133,5 +136,9 @@ bot.catch((err) => {
     console.log("Unknow error", e);
   }
 });
+
+const webhookUrl = "https://grammy-omega.vercel.app/api/telegram-bot";
+
+bot.setWebHook(webhookUrl);
 
 bot.start();
