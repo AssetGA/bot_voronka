@@ -7,7 +7,7 @@ const {
   InlineKeyboard,
 } = require("grammy");
 const { hydrate } = require("@grammyjs/hydrate");
-const { checkIfUserIsInGroup } = require("./checkService");
+const { checkIfUserIsInGroup, checkSubscriptions } = require("./checkService");
 
 const bot = new Bot(process.env.BOT_API_KEY);
 
@@ -58,6 +58,7 @@ const backKeyboard = new InlineKeyboard().text("< назад в меню", "back
 bot.command("menu", async (ctx) => {
   console.log("ctx", ctx.from.id);
   const check = checkIfUserIsInGroup(ctx.from.id);
+  const subscriptions = checkSubscriptions();
   if (check) {
     await ctx.reply("Меню", {
       reply_markup: menuKeyboard,

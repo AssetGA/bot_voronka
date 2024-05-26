@@ -1,7 +1,7 @@
 {
   "name": "grammy",
   "version": "1.0.0",
-  "description": "",
+  "description": "bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",

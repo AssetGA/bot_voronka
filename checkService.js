@@ -34,14 +34,9 @@ async function checkIfUserIsInGroup(userIdToCheck) {
   }
 }
 
-// check instagram
-
-// Replace with your access token
-const accessToken = "YOUR_ACCESS_TOKEN";
-
 // Function to get Instagram subscriptions
 async function getSubscriptions() {
-  const url = `https://graph.instagram.com/me/subscriptions?access_token=${accessToken}`;
+  const url = `https://graph.instagram.com/me/subscriptions?access_token=${process.env.ACCESS_TOKEN_INSTAGRAM}`;
 
   try {
     const response = await axios.get(url);
@@ -55,7 +50,7 @@ async function getSubscriptions() {
 // Function to check and log subscriptions
 async function checkSubscriptions() {
   const subscriptions = await getSubscriptions();
-
+  console.log("subscriptions", subscriptions);
   if (subscriptions && subscriptions.data) {
     console.log("Your Instagram API subscriptions:", subscriptions.data);
   } else {
