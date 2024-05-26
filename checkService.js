@@ -22,7 +22,7 @@ async function getChatMember(userId) {
 }
 
 // Function to check if the user is in the group
-async function checkIfUserIsInGroup(userIdToCheck) {
+export async function checkIfUserIsInGroup(userIdToCheck) {
   const data = await getChatMember(userIdToCheck);
   console.log("data", data);
   if (data && data.ok) {
@@ -48,7 +48,7 @@ async function getSubscriptions() {
 }
 
 // Function to check and log subscriptions
-async function checkSubscriptions() {
+export async function checkSubscriptions() {
   const subscriptions = await getSubscriptions();
   console.log("subscriptions", subscriptions);
   if (subscriptions && subscriptions.data) {
@@ -59,7 +59,3 @@ async function checkSubscriptions() {
 }
 
 // Execute the function to check if the user is in the group
-module.exports = {
-  checkIfUserIsInGroup,
-  checkSubscriptions,
-};
